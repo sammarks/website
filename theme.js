@@ -2,32 +2,33 @@ const resolve = require('object-reference')
 const { transparentize } = require('polished')
 
 const colors = {
-  '@blue': '#3788DD',
-  '@blue-light': '#A3C8F0',
-  '@red': '#E52E59',
-  '@red-light': '#FFC8D5',
-  '@green': '#53D590',
-  '@green-light': '#A3F0C7',
-  '@orange': '#F0A760',
-  '@orange-light': '#F0CAA3',
+  '@blue': '#5B7AB9',
+  '@blue-light': '#F4F6FA',
+  '@red': '#FF6768',
+  '@red-light': '#FFF0F0',
+  '@green': '#50B4A0',
+  '@green-light': '#F4FAF9',
+  '@orange': '#FF9D33',
+  '@orange-light': '#FFF8F0',
 
   '@gray-0': '#FFF',
   '@gray-1': '#F7F8F9',
-  '@gray-2': '#E2E5E9',
-  '@gray-3': '#C3CBD4',
-  '@gray-4': '#A2ABB4',
-  '@gray-5': '#7C8894',
-  '@gray-6': '#5D6874',
-  '@gray-7': '#37404A'
+  '@gray-2': '#D4D8DD',
+  '@gray-3': '#9BA3B0',
+  '@gray-4': '#6B778D',
+  '@gray-5': '#263859',
+  '@gray-6': '#1F2E4C',
+  '@gray-7': '#1B263E'
 }
 
 const sizes = {
   '@size-xxs': '4px',
-  '@size-xs': '8px',
-  '@size-s': '16px',
-  '@size-xm': '18px',
-  '@size-m': '22px',
-  '@size-l': '32px',
+  '@size-xs': '10px',
+  '@size-s': '18px',
+  '@size-xm': '20px',
+  '@size-m': '24px',
+  '@size-ml': '30px',
+  '@size-l': '36px',
   '@size-xl': '48px',
   '@size-xxl': '64px'
 }
@@ -36,7 +37,6 @@ module.exports = resolve({
   ...colors,
   ...sizes,
 
-  '@font-family': "'Open Sans', sans-serif",
   '@code-family': "'Hasklig', 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace",
 
   '@shadow-color': transparentize(0.85, colors['@gray-4']),
@@ -58,7 +58,7 @@ module.exports = resolve({
   '@item-hover-bg': '$.@gray-1',
   '@primary-color': '$.@red',
   '@text-color': '$.@gray-6',
-  '@text-color-secondary': '$.@gray-4',
+  '@text-color-secondary': '$.@gray-3',
   '@heading-color': '$.@gray-7',
   '@border-color-base': '$.@gray-2',
   '@border-color-split': transparentize(0.25, colors['@gray-2']),
@@ -92,12 +92,12 @@ module.exports = resolve({
   '@modal-body-padding': '$.@size-m',
   '@modal-footer-padding-horizontal': '$.@size-m',
 
-  '@heading-1-size': '$.@size-xl',
-  '@heading-2-size': '$.@size-m',
-  '@heading-3-size': '$.@size-s',
+  '@heading-1-size': '$.@size-l',
+  '@heading-2-size': '$.@size-ml',
+  '@heading-3-size': '$.@size-m',
 
   '@font-size-base': '$.@size-s',
-  '@font-size-lg': '$.@size-xm',
+  '@font-size-lg': '$.@size-m',
   '@font-size-sm': '14px',
 
   '@padding-lg': '$.@size-m',
@@ -114,5 +114,6 @@ module.exports = resolve({
   '@btn-height-lg': '@input-height-lg',
   '@btn-height-sm': '@input-height-sm',
 
-  '@line-height-base': '1.25'
+  '@line-height-base': '1.9',
+  '@line-height-compressed': '1.5'
 })

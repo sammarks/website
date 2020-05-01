@@ -1,0 +1,31 @@
+import React from 'react'
+import styled from 'styled-components'
+import GithubOutlined from '@ant-design/icons/lib/icons/GithubOutlined'
+import TwitterOutlined from '@ant-design/icons/lib/icons/TwitterOutlined'
+import LinkedinFilled from '@ant-design/icons/lib/icons/LinkedinFilled'
+
+const Container = styled.div`
+  font-size: ${props => props.theme['@size-m']};
+  display: flex;
+  align-items: center;
+  > a {
+    color: ${props => props.theme['@text-color-secondary']};
+  }
+  > a:not(:last-child) {
+    margin-right: ${props => props.theme['@size-s']};
+  }
+`
+
+export const SocialLinks: React.FC = () => (
+  <Container>
+    <a href={'https://github.com/sammarks'} target={'_blank'}>
+      <GithubOutlined />
+    </a>
+    <a href={'https://twitter.com/therealsammarks'} target={'_blank'}>
+      <TwitterOutlined />
+    </a>
+    <a href={'https://www.linkedin.com/in/samuel-marks-9b975b4b/'} target={'_blank'}>
+      <LinkedinFilled />
+    </a>
+  </Container>
+)

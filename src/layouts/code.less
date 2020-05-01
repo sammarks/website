@@ -1,0 +1,237 @@
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #d6deeb;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+
+  margin-bottom: 0;
+}
+
+pre[class*="language-"]::-moz-selection,
+pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection,
+code[class*="language-"] ::-moz-selection {
+  text-shadow: none;
+  background: rgba(29, 59, 83, 0.99);
+}
+
+pre[class*="language-"]::selection,
+pre[class*="language-"] ::selection,
+code[class*="language-"]::selection,
+code[class*="language-"] ::selection {
+  text-shadow: none;
+  background: rgba(29, 59, 83, 0.99);
+}
+
+@media print {
+  code[class*="language-"],
+  pre[class*="language-"] {
+    text-shadow: none;
+  }
+}
+
+.gatsby-highlight {
+  margin: @size-l -@size-xxl;
+  border-radius: @border-radius-base;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  overflow: auto;
+  line-height: 1.75;
+}
+
+pre[class*="language-"], .gatsby-highlight {
+  color: white;
+  background: @gray-7;
+}
+
+:not(pre) > code[class*="language-"] {
+  background: @gray-1;
+  border: solid 1px @gray-2;
+  color: @gray-7;
+}
+
+:not(pre) > code[class*="language-"] {
+  padding: 0.1em 0.5em;
+  border-radius: 0.3em;
+  white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.cdata {
+  color: rgb(99, 119, 119);
+  font-style: italic;
+}
+
+.token.punctuation {
+  color: rgb(199, 146, 234);
+}
+
+.namespace {
+  color: rgb(178, 204, 214);
+}
+
+.token.deleted {
+  color: rgba(239, 83, 80, 0.56);
+  font-style: italic;
+}
+
+.token.symbol,
+.token.property {
+  color: rgb(128, 203, 196);
+}
+
+.token.tag,
+.token.operator,
+.token.keyword {
+  color: rgb(127, 219, 202);
+}
+
+.token.boolean {
+  color: rgb(255, 88, 116);
+}
+
+.token.number {
+  color: rgb(247, 140, 108);
+}
+
+.token.constant,
+.token.function,
+.token.builtin,
+.token.char {
+  color: rgb(130, 170, 255);
+}
+
+.token.selector,
+.token.doctype {
+  color: rgb(199, 146, 234);
+  font-style: italic;
+}
+
+.token.attr-name,
+.token.inserted {
+  color: rgb(173, 219, 103);
+  font-style: italic;
+}
+
+.token.string,
+.token.url,
+.token.entity,
+.language-css .token.string,
+.style .token.string {
+  color: rgb(173, 219, 103);
+}
+
+.token.class-name,
+.token.atrule,
+.token.attr-value {
+  color: rgb(255, 203, 139);
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+  color: rgb(214, 222, 235);
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/** Line Numberings **/
+/* Adjust the position of the line numbers */
+.gatsby-highlight pre[class*="language-"].line-numbers {
+  padding: @size-l @size-l @size-l @size-xxl;
+  overflow: initial;
+}
+
+/**
+ * If you only want to use line numbering
+ */
+
+.gatsby-highlight {
+  overflow: auto;
+  .line-numbers-rows {
+    padding: @size-l 0 @size-l @size-xs;
+    border-right-color: @gray-4;
+    span::before {
+      color: @text-color-secondary;
+      width: 40px;
+      text-align: right;
+    }
+  }
+}
+
+.gatsby-highlight-code-line {
+  background: @gray-5;
+  display: block;
+  margin-left: -@size-xxl;
+  margin-right: -@size-xxl;
+  padding: 0 @size-xxl;
+  position: relative;
+  &::before {
+    display: block;
+    content: ' ';
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    left: 40px + @size-xs - 2px;
+    bottom: 0;
+    width: 5px;
+    background: @blue;
+  }
+}
+
+
+
+.gatsby-highlight pre[class*="language-bash"].line-numbers {
+  padding: @size-m @size-xxl @size-m @size-s;
+  .line-numbers-rows {
+    display: none;
+  }
+}
+.command-line-prompt {
+  border-right-color: @text-color-secondary;
+  margin: -@size-m @size-s -@size-m 0;
+  padding: @size-m 0;
+}
+.command-line-prompt > span:before {
+  color: @text-color-secondary;
+  content: " ";
+  display: block;
+  padding-right: 0.8em;
+}
+
+/* Prompt for all users */
+.command-line-prompt > span[data-user]:before {
+  content: "[" attr(data-user) "@" attr(data-host) "] $";
+}
+
+/* Prompt for root */
+.command-line-prompt > span[data-user="root"]:before {
+  content: "[" attr(data-user) "@" attr(data-host) "] #";
+}
+
+.command-line-prompt > span[data-prompt]:before {
+  content: attr(data-prompt);
+}

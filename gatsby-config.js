@@ -1,12 +1,10 @@
 const theme = require('./theme')
 
 const config = {
-  title: 'Collabra - Interactive Music Education Practice Platform, for Instructors and Students',
-  description:
-    'Collabra is an interactive practice platform that engages and reinforces the process of practice, ' +
-    'while adding increased accountability and feedback.',
-  keywords: 'collabra, interactive, music, education, lms, practice platform, recording',
-  siteUrl: 'https://collabramusic.com/'
+  title: 'Sam Marks',
+  description: 'TODO',
+  keywords: 'sam, marks, developer, entrepreneur, engineer, designer, lexington, ky',
+  siteUrl: 'https://sammarks.me/'
 }
 
 module.exports = {
@@ -29,7 +27,17 @@ module.exports = {
               wrapperStyle: 'margin-bottom: 1rem'
             }
           },
-          'gatsby-remark-prismjs',
+          {
+            resolve: 'gatsby-remark-prismjs',
+            options: {
+              showLineNumbers: true,
+              prompt: {
+                user: 'root',
+                host: 'localhost',
+                global: true
+              }
+            }
+          },
           'gatsby-remark-copy-linked-files',
           'gatsby-remark-smartypants',
           {
@@ -38,6 +46,29 @@ module.exports = {
               maxWidth: 1140,
               quality: 90,
               linkImagesToOriginal: false
+            }
+          },
+          {
+            resolve: 'gatsby-remark-custom-blocks',
+            options: {
+              blocks: {
+                info: {
+                  classes: 'block-info',
+                  title: 'optional'
+                },
+                warning: {
+                  classes: 'block-warning',
+                  title: 'optional'
+                },
+                success: {
+                  classes: 'block-success',
+                  title: 'optional'
+                },
+                point: {
+                  classes: 'block-point',
+                  title: 'required'
+                }
+              }
             }
           }
         ]
@@ -73,7 +104,7 @@ module.exports = {
       resolve: 'gatsby-plugin-manifest',
       options: {
         name: config.title,
-        short_name: 'Collabra',
+        short_name: 'Sam Marks',
         start_url: '/',
         background_color: theme['@component-background'],
         theme_color: theme['@primary-color'],
@@ -81,6 +112,13 @@ module.exports = {
         icon: 'src/images/icon.png'
       }
     },
-    'gatsby-plugin-offline'
+    'gatsby-plugin-offline',
+    'gatsby-plugin-catch-links',
+    {
+      resolve: 'gatsby-transformer-gitinfo',
+      options: {
+        include: /\.md$/i // Only .md files
+      }
+    }
   ]
 }
