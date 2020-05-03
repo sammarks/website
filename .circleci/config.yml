@@ -54,11 +54,8 @@ jobs:
       - attach_workspace:
           at: ~/repo
       - run:
-          name: Install Lighthouse
-          command: yarn global add @lhci/cli@0.3.x
-      - run:
-          name: Lighthouse CI Autorun
-          command: lhci autorun || echo "LHCI failed!"
+          name: Lighthouse
+          command: yarn lighthouse
   deploy:
     <<: *defaults
     steps:
