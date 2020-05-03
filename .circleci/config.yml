@@ -43,10 +43,9 @@ jobs:
     steps:
       - attach_workspace: # We need the code available to be able to run the tests.
           at: ~/repo
-      - restore_cache: # We need to restore the cache to get the Cypress binary.
-          keys:
-            - v2-dependencies-{{ checksum "package.json" }}
-            - v2-dependencies-
+      - run:
+          name: Cypress Install
+          command: ./node_modules/.bin/cypress install
       - run:
           name: Cypress
           command: yarn cypress
