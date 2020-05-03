@@ -1,0 +1,83 @@
+version: 2.1
+
+defaults: &defaults
+  working_directory: ~/repo
+  docker:
+    - image: circleci/node:14
+
+jobs:
+  build:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+            - v1-dependencies-
+      - run:
+          name: Install Dependencies
+          command: yarn
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+      - run:
+          name: Lint
+          command: yarn lint
+      - run:
+          name: Build
+          command: yarn build
+      - persist_to_workspace:
+          root: ~/repo
+          paths: .
+  cypress:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/repo
+      - run:
+          name: Cypress
+          command: yarn cypress
+  lighthouse:
+    <<: *defaults
+    docker:
+      - image: circleci/node:10.16-browsers
+    steps:
+      - attach_workspace:
+          at: ~/repo
+      - run:
+          name: Install Lighthouse
+          command: yarn global add @lhci/cli@0.3.x
+      - run:
+          name: Lighthouse CI Autorun
+          command: lhci autorun || echo "LHCI failed!"
+  deploy:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/repo
+      - run:
+          name: Deploy
+          command: yarn gh-pages
+
+workflows:
+  version: 2
+  website:
+    jobs:
+      - build:
+          context: open-source
+      - cypress:
+          requires:
+            - build
+      - lighthouse:
+          context: personal-aws
+          requires:
+            - build
+      - deploy:
+          context: personal-aws
+          requires:
+            - cypress
+            - lighthouse
+          filters:
+            branches:
+              only: /^master$/

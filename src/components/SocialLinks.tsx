@@ -18,13 +18,13 @@ const Container = styled.div`
 
 export const SocialLinks: React.FC = () => (
   <Container>
-    <a href={'https://github.com/sammarks'} target={'_blank'}>
+    <a href={'https://github.com/sammarks'} target={'_blank'} title={'Github'}>
       <GithubOutlined />
     </a>
-    <a href={'https://twitter.com/therealsammarks'} target={'_blank'}>
+    <a href={'https://twitter.com/therealsammarks'} target={'_blank'} title={'Twitter'}>
       <TwitterOutlined />
     </a>
-    <a href={'https://www.linkedin.com/in/samuel-marks-9b975b4b/'} target={'_blank'}>
+    <a href={'https://www.linkedin.com/in/samuel-marks-9b975b4b/'} target={'_blank'} title={'LinkedIn'}>
       <LinkedinFilled />
     </a>
   </Container>
