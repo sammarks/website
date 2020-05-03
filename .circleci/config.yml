@@ -16,15 +16,15 @@ jobs:
             echo "//npm.pkg.github.com/:_authToken=$GITHUB_TOKEN" > ~/.npmrc
       - restore_cache:
           keys:
-            - v1-dependencies-{{ checksum "package.json" }}
-            - v1-dependencies-
+            - v2-dependencies-{{ checksum "package.json" }}
+            - v2-dependencies-
       - run:
           name: Install Dependencies
           command: yarn
       - save_cache:
           paths:
             - ~/.cache
-          key: v1-dependencies-{{ checksum "package.json" }}
+          key: v2-dependencies-{{ checksum "package.json" }}
       - run:
           name: Lint
           command: yarn lint
@@ -41,8 +41,8 @@ jobs:
           at: ~/repo
       - restore_cache: # We need to restore the cache to get the Cypress binary.
           keys:
-            - v1-dependencies-{{ checksum "package.json" }}
-            - v1-dependencies-
+            - v2-dependencies-{{ checksum "package.json" }}
+            - v2-dependencies-
       - run:
           name: Cypress
           command: yarn cypress
