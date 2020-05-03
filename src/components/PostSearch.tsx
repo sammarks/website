@@ -23,9 +23,13 @@ const postSearchQuery = graphql`
   }
 `
 
+interface Option {
+  value: string
+  label: string
+}
 export const PostSearch: React.FC = () => {
   const data = useStaticQuery<PostSearchQuery>(postSearchQuery)
-  const [options, setOptions] = useState<any[]>([])
+  const [options, setOptions] = useState<Option[]>([])
   const allOptions = data.content.edges.map(edge => ({
     value: edge.node.childMarkdownRemark.fields.slug,
     label: edge.node.childMarkdownRemark.frontmatter.title

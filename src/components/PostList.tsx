@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
+import { Block } from '@sammarks/web'
+import { Button } from 'antd'
 import { AllPostsQuery } from '../graphqlTypes'
 import { Post } from './Post'
 
@@ -47,6 +49,13 @@ export const PostList: React.FC<PostListProps> = ({ limit = 10, allowExpand = tr
       {limitedPosts.map(post => (
         <Post fragment={post} />
       ))}
+      {allowExpand && currentLimit !== Infinity ? (
+        <Block marginTop={'@size-xl'}>
+          <Button type={'link'} onClick={() => setCurrentLimit(Infinity)}>
+            View all posts &rarr;
+          </Button>
+        </Block>
+      ) : null}
     </>
   )
 }

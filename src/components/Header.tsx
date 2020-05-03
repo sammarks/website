@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
 // @ts-ignore cannot find asset file
-import { responsiveMap } from 'antd/lib/_util/responsiveObserve'
 import profileRoundSmall from '../images/profile-round-small.png'
 
 const Container = styled.div<{ dark?: boolean; leftContent?: boolean }>`
