@@ -10,6 +10,10 @@ jobs:
     <<: *defaults
     steps:
       - checkout
+      - run:
+          name: Authenticate with Registry
+          command: |
+            echo "//npm.pkg.github.com/:_authToken=$GITHUB_TOKEN" > ~/.npmrc
       - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "package.json" }}
