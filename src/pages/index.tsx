@@ -39,7 +39,7 @@ const IndexPage = () => (
               <Block marginBottom={'@size-m'}>
                 <Body color={'@text-color-secondary'}>Here's what I've been writing about:</Body>
               </Block>
-              <PostList limit={5} />
+              <PostList limit={5} allowExpand={false} />
               <Link to={'/posts'}>
                 <Body>View all posts &rarr;</Body>
               </Link>

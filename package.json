@@ -18,11 +18,11 @@
     "lint": "eslint 'src/**/*.{ts,tsx}'",
     "start": "gatsby serve --port 5020",
     "test": "npm run type-check && npm run lint",
-    "test:integration": "start-server-and-test start http://localhost:5020 cypress:run",
+    "test:integration": "start-server-and-test dev http://localhost:8000 cypress:run",
     "type-check": "tsc",
     "generate": "graphql-codegen",
     "cypress": "is-ci \"test:integration\" \"cypress:open\"",
-    "cypress:run": "CYPRESS_BASE_URL=http://localhost:5020 cypress run --record --key 2210fbe2-0f3a-4e37-8260-1a509abde339",
+    "cypress:run": "CYPRESS_BASE_URL=http://localhost:8000 cypress run --record --key 2210fbe2-0f3a-4e37-8260-1a509abde339",
     "cypress:open": "cypress open",
     "lighthouse": "lhci autorun"
   },

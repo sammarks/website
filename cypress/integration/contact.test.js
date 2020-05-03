@@ -30,7 +30,14 @@ describe('contact', () => {
   })
   describe('when entering invalid data', () => {
     beforeEach(() => {
-      cy.route(/getform\.io/i, { status: 200 }).as('getform')
+      cy.route({
+        method: 'POST',
+        url: /getform/i,
+        status: 200,
+        response: {
+          boo: 'response'
+        }
+      }).as('getform')
       cy.findAllByRole('button', { name: /send message/i })
         .first()
         .click()
@@ -46,7 +53,14 @@ describe('contact', () => {
   describe('when entering valid data', () => {
     describe('and the submission is successful', () => {
       beforeEach(() => {
-        cy.route(/getform\.io/i, { status: 200 }).as('getform')
+        cy.route({
+          method: 'POST',
+          url: /getform/i,
+          status: 200,
+          response: {
+            boo: 'response'
+          }
+        }).as('getform')
         fillOutForm()
         cy.wait('@getform')
       })
@@ -58,7 +72,7 @@ describe('contact', () => {
       beforeEach(() => {
         cy.route({
           method: 'POST',
-          url: /getform\.io/i,
+          url: /getform/i,
           status: 500,
           response: {
             boo: 'error'

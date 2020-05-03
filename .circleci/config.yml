@@ -6,7 +6,7 @@ defaults: &defaults
     - image: circleci/node:12
 
 jobs:
-  build:
+  test:
     <<: *defaults
     steps:
       - checkout
@@ -28,9 +28,6 @@ jobs:
       - run:
           name: Lint
           command: yarn lint
-      - run:
-          name: Build
-          command: yarn build
       - persist_to_workspace:
           root: ~/repo
           paths: .
@@ -49,6 +46,17 @@ jobs:
       - run:
           name: Cypress
           command: yarn cypress
+  build:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/repo
+      - run:
+          name: Build
+          command: yarn build
+      - persist_to_workspace:
+          root: ~/repo
+          paths: ./public
   lighthouse:
     <<: *defaults
     docker:
@@ -72,11 +80,15 @@ workflows:
   version: 2
   website:
     jobs:
-      - build:
+      - test:
           context: open-source
       - cypress:
           requires:
-            - build
+            - test
+      - build:
+          context: open-source
+          requires:
+            - test
       - lighthouse:
           context: personal-aws
           requires:
