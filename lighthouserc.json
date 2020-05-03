@@ -3,7 +3,9 @@
     "collect": {
       "numberOfRuns": 3,
       "staticDistDir": "./public",
-      "configPath": "./lighthouse-config.js"
+      "settings": {
+        "configPath": "./lighthouse-config.js"
+      }
     },
     "upload": {
       "target": "temporary-public-storage"
