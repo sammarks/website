@@ -58,8 +58,10 @@ jobs:
           name: Build
           command: yarn build
       - run:
-          name: Copy CNAME
-          command: cp CNAME ./public/
+          name: Copy CNAME & CircleCI Config
+          command: |
+            cp CNAME ./public/
+            cp -r .circleci ./public/
       - persist_to_workspace:
           root: ~/repo
           paths: ./public
