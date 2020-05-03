@@ -43,7 +43,10 @@ code[class*="language-"] ::selection {
 }
 
 .gatsby-highlight {
-  margin: @size-l -@size-xxl;
+  margin: @size-l 0;
+  @media (min-width: 992px) {
+    margin: @size-l -@size-xxl;
+  }
   border-radius: @border-radius-base;
 }
 

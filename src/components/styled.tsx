@@ -4,6 +4,7 @@ import { H1 } from '@sammarks/web'
 export const Container = styled.div`
   max-width: 960px;
   margin: 0 auto;
+  padding: 0 ${props => props.theme['@size-s']};
 `
 
 export const ExtraLarge = styled(H1)`

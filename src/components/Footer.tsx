@@ -9,16 +9,20 @@ import kentucky from '../images/kentucky.png'
 
 const RightColumn = styled(Col)`
   text-align: left;
-  ${media.md} {
+  margin-top: ${props => props.theme['@size-s']};
+  ${media.lg} {
     text-align: right;
+    margin-top: 0;
   }
 `
 const CenterColumn = styled(Col)`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  ${media.md} {
+  margin-bottom: ${props => props.theme['@size-s']};
+  ${media.lg} {
     align-items: center;
+    margin-bottom: 0;
   }
 `
 const Large = styled.div`
@@ -45,14 +49,14 @@ export const Footer: React.FC = () => {
   return (
     <Container>
       <Row align={'middle'}>
-        <Col xs={{ span: 24, order: 1 }} md={{ span: 8, order: 0 }}>
+        <Col xs={{ span: 24, order: 1 }} lg={{ span: 8, order: 0 }}>
           <Large>Sam Marks</Large>
           <BodySmall color={'@text-color-secondary'}>Developer and designer from Lexington, KY</BodySmall>
         </Col>
-        <CenterColumn xs={{ span: 24, order: 0 }} md={{ span: 8, order: 1 }}>
+        <CenterColumn xs={{ span: 24, order: 0 }} lg={{ span: 8, order: 1 }}>
           <SocialLinks />
         </CenterColumn>
-        <RightColumn xs={{ span: 24, order: 2 }} md={{ span: 8, order: 2 }}>
+        <RightColumn xs={{ span: 24, order: 2 }} lg={{ span: 8, order: 2 }}>
           <BodySmall color={'@text-color-secondary'}>Have a project or want to collaborate?</BodySmall>
           <Link to={'/contact'}>
             <Large>Get in Touch &rarr;</Large>

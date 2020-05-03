@@ -21,7 +21,7 @@ const Container = styled.div`
 `
 const Message = styled.div`
   display: none;
-  ${media.md} {
+  ${media.lg} {
     display: block;
   }
 `

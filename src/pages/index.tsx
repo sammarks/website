@@ -35,7 +35,7 @@ const IndexPage = () => (
       <Container style={{ flexGrow: 1, display: 'flex', width: '100%', flexDirection: 'column' }}>
         <ContentContainer>
           <Row gutter={{ sm: 10, md: 20 }}>
-            <Col xs={24} md={16}>
+            <Col xs={24} md={14} lg={16}>
               <Block marginBottom={'@size-m'}>
                 <Body color={'@text-color-secondary'}>Here's what I've been writing about:</Body>
               </Block>
@@ -44,7 +44,7 @@ const IndexPage = () => (
                 <Body>View all posts &rarr;</Body>
               </Link>
             </Col>
-            <Col xs={24} md={8}>
+            <Col xs={24} md={10} lg={8}>
               <Block marginBottom={'@size-m'}>
                 <GetInTouch />
               </Block>

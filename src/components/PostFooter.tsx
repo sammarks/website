@@ -14,14 +14,22 @@ const RightContainer = styled.div`
   flex-direction: column;
   align-items: flex-start;
   text-align: left;
-  ${media.md} {
+  ${media.lg} {
     align-items: flex-end;
     text-align: right;
   }
 `
 const LinkGroup = styled.div`
-  display: inline-flex;
-  align-items: center;
+  > a:last-child {
+    display: block;
+  }
+  margin: ${props => props.theme['@size-xxs']} 0 ${props => props.theme['@size-m']} 0;
+  ${media.lg} {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0;
+  }
   color: ${props => props.theme['@primary-color']};
   > span {
     color: ${props => props.theme['@gray-2']};
@@ -31,11 +39,16 @@ const LinkGroup = styled.div`
 `
 const AuthorContainer = styled.div`
   margin-top: ${props => props.theme['@size-xl']};
-  display: flex;
-  align-items: center;
   line-height: ${props => props.theme['@line-height-compressed']};
+  ${media.lg} {
+    display: flex;
+    align-items: center;
+  }
   > img {
-    margin-right: ${props => props.theme['@size-m']};
+    margin: 0 ${props => props.theme['@size-m']} ${props => props.theme['@size-s']} 0;
+    ${media.lg} {
+      margin-bottom: 0;
+    }
     width: 86px;
   }
 `
@@ -54,7 +67,7 @@ export const PostFooter: React.FC<PostFooterProps> = ({ relativePath, slug, gitL
   return (
     <Container>
       <Row>
-        <Col xs={24} md={12}>
+        <Col xs={24} md={16}>
           <Title>This was last updated {gitLogLatestDate ? `on ${gitLogLatestDate}` : 'today'}</Title>
           <LinkGroup>
             <a href={`https://mobile.twitter.com/search?q=${encodeURIComponent(url)}`} target={'_blank'}>
@@ -66,7 +79,7 @@ export const PostFooter: React.FC<PostFooterProps> = ({ relativePath, slug, gitL
             </a>
           </LinkGroup>
         </Col>
-        <Col xs={24} md={12}>
+        <Col xs={24} md={8}>
           <RightContainer>
             <Title>Share this Article</Title>
             <LinkGroup>
