@@ -2,7 +2,8 @@
   "ci": {
     "collect": {
       "numberOfRuns": 3,
-      "staticDistDir": "./public"
+      "staticDistDir": "./public",
+      "configPath": "./lighthouse-config.js"
     },
     "upload": {
       "target": "temporary-public-storage"
