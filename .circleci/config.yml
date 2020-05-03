@@ -57,6 +57,9 @@ jobs:
       - run:
           name: Build
           command: yarn build
+      - run:
+          name: Copy CNAME
+          command: cp CNAME ./public/
       - persist_to_workspace:
           root: ~/repo
           paths: ./public
