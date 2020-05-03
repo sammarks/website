@@ -12,7 +12,7 @@
   "scripts": {
     "build": "gatsby build",
     "clean": "rimraf public",
-    "deploy": "NODE_DEBUG=gh-pages gh-pages -d public -r https://$GITHUB_TOKEN@github.com/sammarks/website.git",
+    "deploy": "NODE_DEBUG=gh-pages gh-pages -d public -r https://$GITHUB_TOKEN@github.com/sammarks/website.git -m \"chore: publish github pages [ci skip]\"",
     "dev": "gatsby develop",
     "format": "prettier --write \"src/**/*.{ts,tsx,md}\"",
     "lint": "eslint 'src/**/*.{ts,tsx}'",
