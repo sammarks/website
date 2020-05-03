@@ -76,6 +76,11 @@ jobs:
       - attach_workspace:
           at: ~/repo
       - run:
+          name: Set Git Identification
+          command: |
+            git config --global user.email "sam+ci@sammarks.me"
+            git config --global user.name "CI Deploy"
+      - run:
           name: Deploy
           command: yarn deploy
 
