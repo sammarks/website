@@ -6,6 +6,7 @@ import { Container } from '../components/styled'
 import { Header } from '../components/Header'
 import { PostSearch } from '../components/PostSearch'
 import { PostList } from '../components/PostList'
+import { PageTitle } from '../components/PageTitle'
 
 const SearchContainer = styled.div`
   margin: ${props => props.theme['@size-xl']} auto;
@@ -14,6 +15,7 @@ const SearchContainer = styled.div`
 
 const Posts = () => (
   <IndexLayout>
+    <PageTitle title={'Posts'} />
     <Container>
       <Header />
       <Row justify={'center'}>

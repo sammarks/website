@@ -11,6 +11,7 @@ import { renderAst } from '../components/rehype'
 import { MDPageContent } from '../components/MDPageContent'
 import { PostFooter } from '../components/PostFooter'
 import { Footer } from '../components/Footer'
+import { PageTitle } from '../components/PageTitle'
 
 const TitleContainer = styled.div`
   text-align: center;
@@ -22,6 +23,7 @@ export interface PageTemplateProps {
 }
 const PageTemplate: React.FC<PageTemplateProps> = ({ data }) => (
   <IndexLayout>
+    <PageTitle title={data.markdownRemark.frontmatter.title} />
     <Container>
       <Header />
       <TitleContainer>

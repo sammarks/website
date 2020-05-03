@@ -34,7 +34,9 @@ const IndexLayout: React.FC = ({ children }) => (
                 { name: 'description', content: data.site.siteMetadata.description },
                 { name: 'keywords', content: data.site.siteMetadata.keywords }
               ]}
-            />
+            >
+              <html lang={'en'} />
+            </Helmet>
             {children}
           </div>
         </ResponsiveContextProvider>
