@@ -2,7 +2,9 @@ const theme = require('./theme')
 
 const config = {
   title: 'Sam Marks',
-  description: 'TODO',
+  description:
+    "Sam Marks is a developer, designer, and entrepreneur from Lexington KY. He's worked on several teams, helping " +
+    'bring ideas to life through code and pixels.',
   keywords: 'sam, marks, developer, entrepreneur, engineer, designer, lexington, ky',
   siteUrl: 'https://sammarks.me/'
 }
