@@ -85,25 +85,29 @@ workflows:
     jobs:
       - test:
           context: open-source
-          branches:
-            ignore: /^gh-pages$/
+          filters:
+            branches:
+              ignore: /^gh-pages$/
       - cypress:
           requires:
             - test
-          branches:
-            ignore: /^gh-pages$/
+          filters:
+            branches:
+              ignore: /^gh-pages$/
       - build:
           context: open-source
           requires:
             - test
-          branches:
-            ignore: /^gh-pages$/
+          filters:
+            branches:
+              ignore: /^gh-pages$/
       - lighthouse:
           context: personal-aws
           requires:
             - build
-          branches:
-            ignore: /^gh-pages$/
+          filters:
+            branches:
+              ignore: /^gh-pages$/
       - deploy:
           context: personal-aws
           requires:
