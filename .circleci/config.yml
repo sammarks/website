@@ -36,6 +36,10 @@ jobs:
           paths: .
   cypress:
     <<: *defaults
+    docker:
+      - image: cypress/base:8
+        environment:
+          TERM: xterm
     steps:
       - attach_workspace: # We need the code available to be able to run the tests.
           at: ~/repo
