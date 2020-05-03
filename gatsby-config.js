@@ -40,6 +40,13 @@ module.exports = {
               }
             }
           },
+          {
+            resolve: 'gatsby-remark-external-links',
+            options: {
+              target: '_blank',
+              rel: 'noopener'
+            }
+          },
           'gatsby-remark-copy-linked-files',
           'gatsby-remark-smartypants',
           {

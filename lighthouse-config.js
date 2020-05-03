@@ -1,5 +1,7 @@
 module.exports = {
   settings: {
-    skipAudits: []
+    skipAudits: [
+      'uses-http2' // This will never be the case when testing in CI.
+    ]
   }
 }

@@ -37,7 +37,7 @@ export interface GithubBlockProps {
   repository: string
 }
 export const GithubBlock: React.FC<GithubBlockProps> = ({ repository }) => (
-  <a href={`https://github.com/${repository}`} target={'_blank'}>
+  <a href={`https://github.com/${repository}`} target={'_blank'} rel={'noopener'}>
     <Container className={'custom-block block-github'}>
       <Icon>
         <GithubOutlined />
