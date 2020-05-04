@@ -128,6 +128,13 @@ module.exports = {
       options: {
         include: /\.md$/i // Only .md files
       }
+    },
+    {
+      resolve: 'gatsby-plugin-google-analytics',
+      options: {
+        trackingId: 'UA-33197211-1',
+        head: false
+      }
     }
   ]
 }
