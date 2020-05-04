@@ -57,13 +57,13 @@ export const Pushed: React.FC = () => {
       </Header>
       {REPOS.map(repo => (
         <RepoBlock key={repo.name} marginBottom={'@size-s'}>
-          <a href={`https://github.com/sammarks/${repo.name}`} target={'_blank'}>
+          <a href={`https://github.com/sammarks/${repo.name}`} target={'_blank'} rel={'noopener'}>
             <Body className={'name'}>{repo.name}</Body>
             <BodySmall color={'@text-color-secondary'}>{repo.description}</BodySmall>
           </a>
         </RepoBlock>
       ))}
-      <a href={'https://github.com/sammarks'} target={'_blank'}>
+      <a href={'https://github.com/sammarks'} target={'_blank'} rel={'noopener'}>
         <BodySmall>And more &rarr;</BodySmall>
       </a>
     </>
