@@ -58,9 +58,10 @@ jobs:
           name: Build
           command: yarn build
       - run:
-          name: Copy CNAME & CircleCI Config
+          name: Copy CNAME & remove meta folder
           command: |
             cp CNAME ./public/
+            rm -rf ./public/__meta
       - persist_to_workspace:
           root: ~/repo
           paths: ./public
@@ -84,9 +85,6 @@ jobs:
           command: |
             git config --global user.email "sam+ci@sammarks.me"
             git config --global user.name "CI Deploy"
-      - run:
-          name: Remove meta image temporary storage
-          command: rm -rf public/__meta
       - run:
           name: Deploy
           command: yarn deploy

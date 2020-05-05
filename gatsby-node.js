@@ -22,7 +22,7 @@ const imageFromHtml = async (browser, filePath, slug) => {
 
 let browser = null
 
-exports.onPreInit = async () => {
+exports.onPreBuild = async () => {
   browser = await puppeteer.launch({ headless: true })
 }
 
