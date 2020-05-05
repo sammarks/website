@@ -1,5 +1,4 @@
 const path = require('path')
-const puppeteer = require('puppeteer')
 const fs = require('fs-extra')
 
 const metaPathFromSlug = slug => {
@@ -23,7 +22,11 @@ const imageFromHtml = async (browser, filePath, slug) => {
 let browser = null
 
 exports.onPreBuild = async () => {
-  browser = await puppeteer.launch({ headless: true })
+  if (process.env.NODE_ENV === 'production') {
+    // eslint-disable-next-line global-require
+    const puppeteer = require('puppeteer')
+    browser = await puppeteer.launch({ headless: true })
+  }
 }
 
 exports.onPostBuild = async ({ graphql }) => {
