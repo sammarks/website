@@ -85,6 +85,9 @@ jobs:
             git config --global user.email "sam+ci@sammarks.me"
             git config --global user.name "CI Deploy"
       - run:
+          name: Remove meta image temporary storage
+          command: rm -rf public/__meta
+      - run:
           name: Deploy
           command: yarn deploy
 

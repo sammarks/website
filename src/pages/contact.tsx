@@ -9,7 +9,7 @@ import { Container } from '../components/styled'
 import { Header } from '../components/Header'
 import { SocialLinks } from '../components/SocialLinks'
 import { Footer } from '../components/Footer'
-import { PageTitle } from '../components/PageTitle'
+import { SEO } from '../components/SEO'
 
 const FORM_URL = 'https://getform.io/f/3e1a2329-e0d6-43b1-9960-d6c80ed8ef94'
 const SubmittedContainer = styled.div`
@@ -84,7 +84,7 @@ const Posts = () => {
   }
   return (
     <IndexLayout>
-      <PageTitle title={'Contact'} />
+      <SEO title={'Contact'} url={'/contact'} />
       <Container>
         <Header />
         <Row justify={'center'}>

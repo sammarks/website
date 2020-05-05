@@ -11,7 +11,7 @@ import { renderAst } from '../components/rehype'
 import { MDPageContent } from '../components/MDPageContent'
 import { PostFooter } from '../components/PostFooter'
 import { Footer } from '../components/Footer'
-import { PageTitle } from '../components/PageTitle'
+import { SEO } from '../components/SEO'
 
 const TitleContainer = styled.div`
   text-align: center;
@@ -23,7 +23,14 @@ export interface PageTemplateProps {
 }
 const PageTemplate: React.FC<PageTemplateProps> = ({ data }) => (
   <IndexLayout>
-    <PageTitle title={data.markdownRemark.frontmatter.title} />
+    <SEO
+      title={data.markdownRemark.frontmatter.title}
+      description={data.markdownRemark.frontmatter.summary}
+      ogImage={data.markdownRemark.fields.socialImagePath}
+      isArticle
+      datePublished={data.markdownRemark.frontmatter.date}
+      url={data.markdownRemark.fields.slug}
+    />
     <Container>
       <Header />
       <TitleContainer>
@@ -60,9 +67,12 @@ export const query = graphql`
       htmlAst
       fields {
         slug
+        socialImagePath
       }
       frontmatter {
         title
+        summary
+        date(formatString: "YYYY-MM-DD")
       }
     }
   }

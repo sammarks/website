@@ -12,6 +12,7 @@ import { Pushed } from '../components/Pushed'
 import { Footer } from '../components/Footer'
 
 import IndexLayout from '../layouts'
+import { SEO } from '../components/SEO'
 
 const HomeContainer = styled.div`
   background: ${props => props.theme['@gray-1']};
@@ -30,6 +31,7 @@ const ContentContainer = styled.div`
 
 const IndexPage = () => (
   <IndexLayout>
+    <SEO />
     <HomeContainer>
       <Hero />
       <Container style={{ flexGrow: 1, display: 'flex', width: '100%', flexDirection: 'column' }}>

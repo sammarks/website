@@ -6,7 +6,21 @@ const config = {
     "Sam Marks is a developer, designer, and entrepreneur from Lexington KY. He's worked on several teams, helping " +
     'bring ideas to life through code and pixels.',
   keywords: 'sam, marks, developer, entrepreneur, engineer, designer, lexington, ky',
-  siteUrl: 'https://sammarks.me/'
+  siteUrl: 'https://sammarks.me/',
+  canonicalUrl: 'https://sammarks.me',
+  image: 'https://sammarks.me/icons/icon-512x512.png',
+  ogImage: 'https://sammarks.me/og-image.jpg',
+  author: {
+    name: 'Sam Marks'
+  },
+  organization: {
+    name: 'Sam Marks',
+    url: 'https://sammarks.me',
+    logo: 'https://sammarks.me/icons/icon-512x512.png'
+  },
+  social: {
+    twitter: '@therealsammarks'
+  }
 }
 
 module.exports = {

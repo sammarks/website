@@ -3,9 +3,9 @@ import { Link } from 'gatsby'
 import { BodyLarge, H1, Body, Block } from '@sammarks/web'
 import styled from 'styled-components'
 import IndexLayout from '../layouts'
-import { PageTitle } from '../components/PageTitle'
 import { Container } from '../components/styled'
 import { Header } from '../components/Header'
+import { SEO } from '../components/SEO'
 
 const ContentContainer = styled.div`
   text-align: center;
@@ -13,7 +13,7 @@ const ContentContainer = styled.div`
 
 const NotFoundPage = () => (
   <IndexLayout>
-    <PageTitle title={'404'} />
+    <SEO title={'404'} />
     <Container>
       <Header />
       <ContentContainer>
