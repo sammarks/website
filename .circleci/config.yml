@@ -34,7 +34,7 @@ jobs:
   cypress:
     <<: *defaults
     docker:
-      - image: cypress/base:8
+      - image: cypress/base:12.16.1
         environment:
           TERM: xterm
     steps:
@@ -43,9 +43,6 @@ jobs:
       - run:
           name: Cypress Install
           command: ./node_modules/.bin/cypress install
-      - run: # We need to rebuild deps because we're on a different node version.
-          name: Rebuild
-          command: npm rebuild
       - run:
           name: Cypress
           command: yarn cypress
