@@ -51,7 +51,7 @@ export const Footer: React.FC = () => {
       <Row align={'middle'}>
         <Col xs={{ span: 24, order: 1 }} lg={{ span: 8, order: 0 }}>
           <Large>Sam Marks</Large>
-          <BodySmall color={'@text-color-secondary'}>Developer and designer from Lexington, KY</BodySmall>
+          <BodySmall color={'@text-color-secondary'}>Developer and Designer from Lexington, KY</BodySmall>
         </Col>
         <CenterColumn xs={{ span: 24, order: 0 }} lg={{ span: 8, order: 1 }}>
           <SocialLinks />
