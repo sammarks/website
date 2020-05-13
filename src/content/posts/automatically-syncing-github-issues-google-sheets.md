@@ -126,7 +126,7 @@ Then, [click here to launch the
 stack.](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?stackName=github-sheets-sync&templateURL=https://sammarks-cf-templates.s3.amazonaws.com/github-sheets-sync/template.yaml)
 You can also review the options over at the Github repository.
 
-<github>sammarks/objection-graphql-relay</github>
+<github>sammarks/cloudformation-github-sheets-sync</github>
 
 Once you click that link, you'll be taken to the AWS Console where you might be asked to verify your
 credentials. Once you login, you'll be taken to the "Create Stack" screen inside CloudFormation. All
