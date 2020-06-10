@@ -23,7 +23,9 @@ export const Post: React.FC<PostProps> = ({ fragment }) => {
     <Link to={fragment.childMarkdownRemark.fields.slug}>
       <Container>
         <Block marginBottom={'@size-xs'}>
-          <BodyLarge color={'@text-color'}>{fragment.childMarkdownRemark.frontmatter.title}</BodyLarge>
+          <BodyLarge color={'@text-color'} style={{ lineHeight: 1.3 }}>
+            {fragment.childMarkdownRemark.frontmatter.title}
+          </BodyLarge>
         </Block>
         <Block marginBottom={'@size-xs'}>
           <Body color={'@text-color-secondary'}>{fragment.childMarkdownRemark.frontmatter.summary}</Body>
