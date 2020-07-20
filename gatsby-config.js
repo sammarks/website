@@ -87,6 +87,10 @@ module.exports = {
                   classes: 'block-success',
                   title: 'optional'
                 },
+                gray: {
+                  classes: 'block-gray',
+                  title: 'optional'
+                },
                 point: {
                   classes: 'block-point',
                   title: 'required'

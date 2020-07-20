@@ -5,9 +5,21 @@ export const MDPageContent = styled.div`
   p {
     margin-bottom: ${props => props.theme['@size-m']};
   }
+  blockquote {
+    border-left: solid 5px ${props => props.theme['@gray-2']};
+    padding: ${props => props.theme['@size-xs']} 0 ${props => props.theme['@size-xs']} ${props => props.theme['@size-s']};
+    margin-bottom: ${props => props.theme['@size-m']};
+    > * {
+      color: ${props => props.theme['@gray-3']};
+    }
+    > p:last-child {
+      margin-bottom: 0;
+    }
+  }
   .custom-block.block-info,
   .custom-block.block-warning,
   .custom-block.block-success,
+  .custom-block.block-gray,
   .custom-block.block-point,
   .custom-block.block-github {
     border-radius: ${props => props.theme['@border-radius-base']};
@@ -45,5 +57,9 @@ export const MDPageContent = styled.div`
   .custom-block.block-point {
     background: ${props => props.theme['@red-light']};
     color: ${props => props.theme['@red']};
+  }
+  .custom-block.block-gray {
+    background: ${props => props.theme['@background-color-base']};
+    color: ${props => props.theme['@gray-5']};
   }
 `
