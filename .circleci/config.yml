@@ -1,7 +1,7 @@
 version: 2.1
 
 defaults: &defaults
-  working_directory: ~/repo
+  working_directory: /mnt/ramdisk/repo
   docker:
     - image: sammarks/circleci-puppeteer:latest
 
@@ -16,20 +16,20 @@ jobs:
             echo "//npm.pkg.github.com/:_authToken=$GITHUB_TOKEN" > ~/.npmrc
       - restore_cache:
           keys:
-            - v2-dependencies-{{ checksum "package.json" }}
-            - v2-dependencies-
+            - v3-dependencies-{{ checksum "yarn.lock" }}
+            - v3-dependencies-
       - run:
           name: Install Dependencies
-          command: yarn
+          command: yarn --frozen-lockfile --cache-folder /mnt/ramdisk/yarn
       - save_cache:
           paths:
-            - ~/.cache
-          key: v2-dependencies-{{ checksum "package.json" }}
+            - /mnt/ramdisk/yarn
+          key: v3-dependencies-{{ checksum "yarn.lock" }}
       - run:
           name: Lint
           command: yarn lint
       - persist_to_workspace:
-          root: ~/repo
+          root: /mnt/ramdisk/repo
           paths: .
   cypress:
     <<: *defaults
@@ -39,7 +39,7 @@ jobs:
           TERM: xterm
     steps:
       - attach_workspace: # We need the code available to be able to run the tests.
-          at: ~/repo
+          at: /mnt/ramdisk/repo
       - run:
           name: Cypress Install
           command: ./node_modules/.bin/cypress install
@@ -50,7 +50,7 @@ jobs:
     <<: *defaults
     steps:
       - attach_workspace:
-          at: ~/repo
+          at: /mnt/ramdisk/repo
       - run:
           name: Build
           command: yarn build
@@ -60,7 +60,7 @@ jobs:
             cp CNAME ./public/
             rm -rf ./public/__meta
       - persist_to_workspace:
-          root: ~/repo
+          root: /mnt/ramdisk/repo
           paths: ./public
   lighthouse:
     <<: *defaults
@@ -68,7 +68,7 @@ jobs:
       - image: circleci/node:10.16-browsers
     steps:
       - attach_workspace:
-          at: ~/repo
+          at: /mnt/ramdisk/repo
       - run:
           name: Lighthouse
           command: yarn lighthouse
@@ -76,7 +76,7 @@ jobs:
     <<: *defaults
     steps:
       - attach_workspace:
-          at: ~/repo
+          at: /mnt/ramdisk/repo
       - run:
           name: Set Git Identification
           command: |
