@@ -43,7 +43,7 @@ export const GithubBlock: React.FC<GithubBlockProps> = ({ repository }) => (
         <GithubOutlined />
       </Icon>
       <Message>
-        <strong>View this project on Github.</strong>
+        <strong>View on Github.</strong>
       </Message>
       <Right>{repository} &rarr;</Right>
     </Container>
