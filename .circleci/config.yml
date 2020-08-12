@@ -16,15 +16,16 @@ jobs:
             echo "//npm.pkg.github.com/:_authToken=$GITHUB_TOKEN" > ~/.npmrc
       - restore_cache:
           keys:
-            - v3-dependencies-{{ checksum "yarn.lock" }}
-            - v3-dependencies-
+            - v4-dependencies-{{ checksum "yarn.lock" }}
+            - v4-dependencies-
       - run:
           name: Install Dependencies
           command: yarn --frozen-lockfile --cache-folder /mnt/ramdisk/yarn
       - save_cache:
           paths:
             - /mnt/ramdisk/yarn
-          key: v3-dependencies-{{ checksum "yarn.lock" }}
+            - /mnt/ramdisk/repo/node_modules
+          key: v4-dependencies-{{ checksum "yarn.lock" }}
       - run:
           name: Lint
           command: yarn lint
