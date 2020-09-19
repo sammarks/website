@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Link } from 'gatsby'
-import { BodyLarge, H1, Body, Block } from '@sammarks/web'
+import { BodyLarge, H1, Body, Block } from '@thesisedu/web'
 import styled from 'styled-components'
 import IndexLayout from '../layouts'
 import { Container } from '../components/styled'

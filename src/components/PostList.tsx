@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
-import { Block } from '@sammarks/web'
+import { Block } from '@thesisedu/web'
 import { Button } from 'antd'
 import { AllPostsQuery } from '../graphqlTypes'
 import { Post } from './Post'

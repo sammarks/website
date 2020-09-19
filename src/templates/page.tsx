@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { Row, Col } from 'antd'
-import { H1 } from '@sammarks/web'
+import { H1 } from '@thesisedu/web'
 import styled from 'styled-components'
 import { PageTemplateQuery } from '../graphqlTypes'
 import IndexLayout from '../layouts'

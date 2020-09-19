@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Col, Row } from 'antd'
-import { media } from '@sammarks/web'
+import { media } from '@thesisedu/web'
 import { Container, ExtraLarge } from './styled'
 import { Header } from './Header'
 import { SocialLinks } from './SocialLinks'

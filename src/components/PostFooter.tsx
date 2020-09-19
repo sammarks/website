@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Row, Col } from 'antd'
-import { media, BodySmall, Body } from '@sammarks/web'
+import { media, BodySmall, Body } from '@thesisedu/web'
 import { TwitterShareButton, FacebookShareButton } from 'react-share'
 // @ts-ignore
 import profileRoundLarge from '../images/profile-round-large.png'

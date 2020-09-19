@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
-import { Body, BodySmall, media } from '@sammarks/web'
+import { Body, BodySmall, media } from '@thesisedu/web'
 
 const Container = styled.div`
   line-height: ${props => props.theme['@line-height-compressed']};

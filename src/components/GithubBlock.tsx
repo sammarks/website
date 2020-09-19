@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { media } from '@sammarks/web'
+import { media } from '@thesisedu/web'
 import GithubOutlined from '@ant-design/icons/lib/icons/GithubOutlined'
 
 const Container = styled.div`

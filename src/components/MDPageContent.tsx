@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { media } from '@sammarks/web'
+import { media } from '@thesisedu/web'
 
 export const MDPageContent = styled.div`
   p {

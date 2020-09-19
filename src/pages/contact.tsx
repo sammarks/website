@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import { Row, Col, Form, Input, Button, message } from 'antd'
-import { H1, Body, Block, H2 } from '@sammarks/web'
+import { H1, Body, Block, H2 } from '@thesisedu/web'
 import axios from 'axios'
 import CheckCircleFilled from '@ant-design/icons/lib/icons/CheckCircleFilled'
 import IndexLayout from '../layouts'

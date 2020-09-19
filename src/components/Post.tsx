@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
-import { BodyLarge, Body, BodySmall, Block } from '@sammarks/web'
+import { BodyLarge, Body, BodySmall, Block } from '@thesisedu/web'
 import pluralize from 'pluralize'
 import { PostFragment } from '../graphqlTypes'
 

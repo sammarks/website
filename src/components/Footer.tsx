@@ -1,6 +1,6 @@
 import React from 'react'
 import { Row, Col } from 'antd'
-import { media, BodySmall } from '@sammarks/web'
+import { media, BodySmall } from '@thesisedu/web'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
 import { SocialLinks } from './SocialLinks'

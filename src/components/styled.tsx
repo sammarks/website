@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { H1 } from '@sammarks/web'
+import { H1 } from '@thesisedu/web'
 
 export const Container = styled.div`
   max-width: 960px;

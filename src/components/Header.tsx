@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
-import { media } from '@sammarks/web'
+import { media } from '@thesisedu/web'
 // @ts-ignore cannot find asset file
 import profileRoundSmall from '../images/profile-round-small.png'
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import RehypeReact from 'rehype-react'
-import { H2, H3, Body, BodyLarge } from '@sammarks/web'
+import { H2, H3, Body, BodyLarge } from '@thesisedu/web'
 import { IconContainer } from './IconContainer'
 import { GithubBlock } from './GithubBlock'
 
