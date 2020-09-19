@@ -67,6 +67,7 @@
     "gatsby-transformer-remark": "^2.6.58",
     "gatsby-transformer-sharp": "^2.3.18",
     "less": "^3.11.1",
+    "history": "^5.0.0",
     "modern-normalize": "^0.6.0",
     "normalize.css": "^8.0.1",
     "object-reference": "^0.0.4",
@@ -79,6 +80,8 @@
     "react-dom": "^16.13.0",
     "react-helmet": "^5.2.1",
     "react-share": "^4.1.0",
+    "react-router": "^6.0.0-beta.0",
+    "react-router-dom": "^6.0.0-beta.0",
     "rehype-react": "^5.0.1",
     "styled-components": "^5.0.1",
     "typescript": "^3.8.3"
