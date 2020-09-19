@@ -2,7 +2,7 @@ import React from 'react'
 import InfoCircleOutlined from '@ant-design/icons/lib/icons/InfoCircleOutlined'
 import ExclamationCircleOutlined from '@ant-design/icons/lib/icons/ExclamationCircleOutlined'
 import CheckCircleOutlined from '@ant-design/icons/lib/icons/CheckCircleOutlined'
-import styled from 'styled-components'
+import { styled } from '@thesisedu/web/dist'
 import { AntdIconProps } from '@ant-design/icons/lib/components/AntdIcon'
 
 const Container = styled.div`

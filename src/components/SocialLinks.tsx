@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import { styled } from '@thesisedu/web/dist'
 import GithubOutlined from '@ant-design/icons/lib/icons/GithubOutlined'
 import TwitterOutlined from '@ant-design/icons/lib/icons/TwitterOutlined'
 import LinkedinFilled from '@ant-design/icons/lib/icons/LinkedinFilled'

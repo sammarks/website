@@ -1,5 +1,4 @@
-import styled from 'styled-components'
-import { media } from '@thesisedu/web'
+import { styled, media } from '@thesisedu/web/dist'
 
 export const MDPageContent = styled.div`
   p {

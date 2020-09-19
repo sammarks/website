@@ -2,7 +2,7 @@ import * as React from 'react'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 import { ThemeProvider } from 'styled-components'
-import { ResponsiveContextProvider } from '@thesisedu/web'
+import { ResponsiveContextProvider } from '@thesisedu/web/dist'
 import * as theme from '../../theme'
 
 import 'modern-normalize'

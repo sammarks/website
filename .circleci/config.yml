@@ -53,6 +53,9 @@ jobs:
       - attach_workspace:
           at: /mnt/ramdisk/repo
       - run:
+          name: Clean
+          command: ./node_modules/.bin/gatsby clean
+      - run:
           name: Build
           command: yarn build
       - run:

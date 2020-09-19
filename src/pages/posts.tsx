@@ -1,5 +1,5 @@
 import * as React from 'react'
-import styled from 'styled-components'
+import { styled } from '@thesisedu/web/dist'
 import { Row, Col } from 'antd'
 import IndexLayout from '../layouts'
 import { Container } from '../components/styled'

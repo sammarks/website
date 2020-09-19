@@ -1,7 +1,6 @@
 import React from 'react'
-import styled from 'styled-components'
 import GithubOutlined from '@ant-design/icons/lib/icons/GithubOutlined'
-import { Body, Block, BodySmall } from '@thesisedu/web'
+import { styled, Body, Block, BodySmall } from '@thesisedu/web/dist'
 
 export interface RepoDetails {
   name: string
