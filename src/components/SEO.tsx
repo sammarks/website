@@ -66,6 +66,9 @@ export const SEO: React.FC<SEOProps> = props => {
         <meta name={'twitter:title'} content={seoTitle} />
         <meta name={'twitter:description'} content={description} />
         <meta name={'twitter:image'} content={ogImage} />
+
+        {/* Mastodon */}
+        <link rel={'me'} href={'https://mastodon.social/@smarks'} />
       </Helmet>
       <SchemaOrg
         author={site.author}
