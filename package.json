@@ -32,7 +32,9 @@
   "dependencies": {
     "@ant-design/icons": "4.0.2",
     "@babel/helper-validator-identifier": "7.9.5",
-    "@thesisedu/web": "*",
+    "@babel/runtime": "^7.23.2",
+    "@thesisedu/feature": "0.99.8",
+    "@thesisedu/web": "0.128.0",
     "@testing-library/cypress": "6.0.0",
     "@types/pluralize": "0.0.29",
     "@types/rehype-react": "4.0.0",
@@ -113,6 +115,10 @@
     "start-server-and-test": "1.11.0"
   },
   "resolutions": {
-    "@sammarks/icons": "1.14.0"
+    "@sammarks/icons": "1.14.0",
+    "core-js": "2.6.9",
+    "sharp": "0.32.6",
+    "@babel/compat-data": "7.9.0",
+    "@babel/runtime": "7.23.2"
   }
 }

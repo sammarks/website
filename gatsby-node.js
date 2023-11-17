@@ -154,3 +154,14 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 }
+
+exports.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    resolve: {
+      extensions: ['.wasm', '.js', '.cjs', '.json'],
+      alias: {
+        'framer-motion': 'framer-motion/dist/framer-motion'
+      }
+    }
+  })
+}

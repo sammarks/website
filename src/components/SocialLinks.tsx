@@ -25,7 +25,7 @@ export const SocialLinks: React.FC = () => (
     <a href={'https://twitter.com/therealsammarks'} target={'_blank'} title={'Twitter'} rel={'noopener'}>
       <TwitterOutlined />
     </a>
-    <a href={'https://mastodon.social/@smarks'} target={'_blank'} rel={'me'} title={'Mastodon'}>
+    <a href={'https://mastodon.social/@smarks'} target={'_blank'} rel={'me'} title={'Mastodon'} style={{ transform: 'translateY(3px)' }}>
       <MastodonIcon />
     </a>
     <a href={'https://www.linkedin.com/in/samuel-marks-9b975b4b/'} target={'_blank'} title={'LinkedIn'} rel={'noopener'}>
